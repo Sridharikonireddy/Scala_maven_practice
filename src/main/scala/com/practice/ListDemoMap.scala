@@ -7,15 +7,20 @@ object ListDemoMap {
       def main(args: Array[String]): Unit = {
 
             val listMap = ListMap("Rice" -> "100", "Wheat" -> "50", "Gram" -> "500")
-            val emptyListMap = new ListMap()
+
             println(listMap)
-            println(emptyListMap)
+            var em = new ListMap()
+            println(em)
             listMap.foreach {
-                  case (key, value) => println(key + "->" + value)
-                        println(listMap("Gram"))
-                        var newListMap = listMap + ("Pulses" -> "550")
-                        newListMap.foreach {
-                              case (key, value) => println(key + " -> " + value)
+                  case (key, value) => println(key + " -> " + value)
+                        listMap.foreach {
+                              case (key, value) => println(key + "->" + value)
+                                    println(listMap("Gram"))
+                                    var newListMap = listMap + ("Pulses" -> "550")
+                                    println(newListMap)
+                                    newListMap.foreach {
+                                          case (key, value) => println(key + " -> " + value)
+                                    }
                         }
             }
       }
